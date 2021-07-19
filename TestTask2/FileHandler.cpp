@@ -3,7 +3,7 @@
 #include "FileHandler.h"
 #include "boost/algorithm/string.hpp"
 
-FileInfo FileHandler::GetFileInfo(std::string& buffer) const
+FileInfo FileHandler::GetFileInfo(std::string buffer) const
 {
     FileInfo fi; //Create FileInfo struct variable
     std::vector<std::string> strs; // Create vector of string for next spliting the string

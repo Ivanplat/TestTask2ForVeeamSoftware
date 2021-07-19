@@ -17,7 +17,7 @@ public:
 public:
 	virtual void CheckHashSumm(std::string Input); // This function is for the ALL files
 private:
-	virtual void CheckFileHashSumm(std::string FolderPath, FileInfo& fi); // This function is for each single file
+	virtual void CheckFileHashSumm(std::string FolderPath, FileInfo fi); // This function is for each single file
 	virtual std::unique_ptr<Botan::HashFunction> CreateHashFunction(std::string HashFunction); // It's a fabric method function for create a hash function object prt
 private:
 	FileHandler* fh; //Pointer to FileHandle

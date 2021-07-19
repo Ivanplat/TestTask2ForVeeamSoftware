@@ -30,7 +30,7 @@ void HashHandler::CheckHashSumm(std::string Input)
 
 }
 
-void HashHandler::CheckFileHashSumm(std::string FolderPath, FileInfo& fi)
+void HashHandler::CheckFileHashSumm(std::string FolderPath, FileInfo fi)
 {
 	auto hash1 = CreateHashFunction(fi.HashFunction); // Create hash function, using fabric methode
 	std::string hashContext = fh->GetFileHashContent(FolderPath + "/" + fi.FileName); // Get file content as binary
@@ -51,7 +51,7 @@ void HashHandler::CheckFileHashSumm(std::string FolderPath, FileInfo& fi)
 	std::cout<< fi.FileName << " NOT FOUND" << std::endl; // if fail does not found: *FILENAME* NOT FOUND
 }
 
-std::unique_ptr<Botan::HashFunction> HashHandler::CreateHashFunction(std::string HashFunction)
+std::unique_ptr<Botan::HashFunction> HashHandler::CreateHashFunction(const std::string HashFunction)
 {
 	//This function designed as fabric methode, because we have to create different hash functions by their name
 	if (HashFunction == "md5")
